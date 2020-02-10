@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Events</string>
+    <string name="nuevo">Nuevo</string>
+    <string name="guardados">Guardados</string>
+    <string name="guardar">Guardar</string>
+    <string name="restablecer">Restablecer</string>
+    <string name="descripci_n_del_evento">Descripción del evento</string>
+    <string name="artistas_invitados">Artistas invitados</string>
+    <string name="precio">Precio</string>
+    <string name="aforo">Aforo</string>
+    <string name="organizador">Organizador</string>
+    <string name="hora">Hora</string>
+    <string name="fecha">Fecha</string>
+    <string name="lugar">Lugar</string>
+    <string name="nombre_del_evento">Nombre del evento</string>
+    <string name="nuevoevento">nuevoEvento</string>
+    <string name="dia">Día</string>
+    <string name="descartar">Descartar</string>
+    <string name="acercaEventosv2">Acerca de Eventos V2</string>
+    <string name="Confirm">¿Está seguro?</string>
+    <string name="eliminarEvento">Eliminar evento</string>
+    <string name="no">No</string>
+    <string name="si">Si</string>
+    <string name="acercaV2Mensaje">Eventos Android\nApp para ver eventos\n(c) 2019 Valery Cortez</string>
+    <string name="cerrar">Cerrar</string>
+    <string name="ListaEventos">Lista de eventos</string>
+    <string name="detallesEvento">Detalles del evento</string>
+    <string name="eventosGuardados">Eventos guardados</string>
+    <string name="nuevoEvento">Nuevo Evento</string>
+    <string name="desconocida">Desconocida</string>
+    <string name="desconocido">Desconocido</string>
+    <string name="aforoTieneQueSerNumero">El aforo tiene que ser un número</string>
+    <string name="aforoAlMenosUno">El aforo tiene que ser de al menos una persona</string>
+    <string name="precioTieneQueSerNumero">El precio tiene que ser un número</string>
+    <string name="precioNoNegativo">El precio no puede ser negativo</string>
+    <string name="nombreObligatorio">El evento tiene que tener nombre</string>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Events</string>
+    <string name="nuevo">New</string>
+    <string name="guardados">Saved</string>
+    <string name="guardar">Save</string>
+    <string name="restablecer">Clear</string>
+    <string name="descripci_n_del_evento">Event description</string>
+    <string name="artistas_invitados">Invited artists</string>
+    <string name="precio">Price</string>
+    <string name="aforo">Capacity</string>
+    <string name="organizador">Organizer</string>
+    <string name="hora">Hour</string>
+    <string name="fecha">Date</string>
+    <string name="lugar">Place</string>
+    <string name="nombre_del_evento">Event Name</string>
+    <string name="nuevoevento">newEvent</string>
+    <string name="dia">Day</string>
+    <string name="descartar">Discard</string>
+    <string name="acercaEventosv2">About Eventos V2</string>
+    <string name="Confirm">Are you sure?</string>
+    <string name="eliminarEvento">Delete event</string>
+    <string name="no">No</string>
+    <string name="si">Yes</string>
+    <string name="acercaV2Mensaje">Android events\nEvents App\n(c) 2019 Valery Cortez</string>
+    <string name="cerrar">Close</string>
+    <string name="ListaEventos">Event list</string>
+    <string name="detallesEvento">Event details</string>
+    <string name="eventosGuardados">Saved events</string>
+    <string name="nuevoEvento">New event</string>
+    <string name="desconocida">Unknown</string>
+    <string name="desconocido">Unknown</string>
+    <string name="aforoTieneQueSerNumero">Capacity must be a number</string>
+    <string name="aforoAlMenosUno">Capacity must be at least one</string>
+    <string name="precioTieneQueSerNumero">Price must be a number</string>
+    <string name="precioNoNegativo">Price can\'t be negative</string>
+    <string name="nombreObligatorio">Event must be named</string>
+
+</resources>
