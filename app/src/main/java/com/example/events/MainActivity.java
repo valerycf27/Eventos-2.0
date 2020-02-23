@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ArrayList<Evento> eventos;
-    private EventoAdapter adaptador;
+    public static EventoAdapter adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,13 +50,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+        /*if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
-
-        DataBase db = new DataBase(this);
+*/
+        //DataBase db = new DataBase(this);
         eventos.clear();
-        eventos.addAll(db.getEventos());
+        //eventos.addAll(db.getEventos());
         adaptador.notifyDataSetChanged();
+
+        DescargaDatos descargaDatos = new DescargaDatos (this,eventos);
+        descargaDatos.execute(Constantes.URL+"eventos");
     }
 
     @Override
@@ -123,6 +126,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 builder.create().show();
                 return true;
+
+            case R.id.verMapa:
+                Intent intentMapa = new Intent(this, Mapa.class);
+
+                intentMapa.putExtra("eventoLat", eventos.get(posicion).getLatitud());
+                intentMapa.putExtra("eventoLong", eventos.get(posicion).getLongitud());
+                intentMapa.putExtra("eventoNom", eventos.get(posicion).getNombre());
+                intentMapa.putExtra("eventoLug", eventos.get(posicion).getLugar());
+
+                startActivity(intentMapa);
+                return true;
             default:
                 return super.onContextItemSelected(item);
         }
@@ -167,10 +181,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
         Intent intentMapa = new Intent(this, DetallesEvento.class);
 
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        /*ByteArrayOutputStream stream = new ByteArrayOutputStream();
         eventos.get(i).getImagen().compress(Bitmap.CompressFormat.PNG, 100, stream);
         byte[] byteArray = stream.toByteArray();
-        intentMapa.putExtra("imagen", byteArray);
+        intentMapa.putExtra("imagen", byteArray);*/
 
         intentMapa.putExtra("nombre", eventos.get(i).getNombre());
         intentMapa.putExtra("fecha", eventos.get(i).getFecha());

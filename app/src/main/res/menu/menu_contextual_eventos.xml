@@ -7,4 +7,7 @@
     <item
         android:id="@+id/itemDescartar"
         android:title="@string/descartar" />
+    <item
+        android:id="@+id/verMapa"
+        android:title="Ver en Mapa" />
 </menu>

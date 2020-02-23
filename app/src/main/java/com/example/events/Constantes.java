@@ -16,4 +16,6 @@ public class Constantes {
     public final static String ESTRELLAS = "estrellas";
     public final static String GUARDADO = "guardado";
     public final static String IMAGEN = "imagen";
+    //public final static String URL = "http://192.168.137.1:8080/";
+    public final static String URL = "http://192.168.42.105:8080/";
 }

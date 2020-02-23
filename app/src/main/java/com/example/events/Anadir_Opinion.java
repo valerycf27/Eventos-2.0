@@ -16,6 +16,7 @@ public class Anadir_Opinion extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anadir__opinion);
+        this.setTitle(getString(R.string.titleAnadirOpi));
 
         Intent intent = getIntent();
         TextView tvNombreM = findViewById(R.id.tvNombreM);

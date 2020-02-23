@@ -3,6 +3,11 @@
     package="com.example.events">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers." />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
 
     <application
         android:allowBackup="true"
@@ -10,8 +15,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Anadir_Opinion"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD9flnxFwr66BZaKXT21YkdSt0Did4Vh-0" />
+        <activity android:name=".ListaOpiniones"></activity>
+        <activity android:name=".Mapa" />
+        <activity android:name=".Anadir_Opinion" />
         <activity android:name=".EventosGuardados" />
         <activity android:name=".DetallesEvento" />
         <activity android:name=".Formulario_evento" />

@@ -16,6 +16,8 @@ public class Evento {
     private boolean guardado;
     private float ID;
     private Bitmap imagen;
+    private float latitud;
+    private float longitud;
 
 
     public Evento (float ID, String nombre, String lugar, String fecha, String hora, long aforo, String organizador, String artistasInvitados, String descripcion, float precio, float estrellas, boolean guardado){
@@ -46,6 +48,8 @@ public class Evento {
         this.estrellas=estrellas;
         this.guardado=guardado;
     }
+    public Evento(){}
+
 
     public String getNombre() {
         return nombre;
@@ -151,8 +155,26 @@ public class Evento {
         this.imagen = imagen;
     }
 
+    public float getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(float latitud) {
+        this.latitud = latitud;
+    }
+
+    public float getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(float longitud) {
+        this.longitud = longitud;
+    }
+
     public void guardar(){
         guardado = !guardado;
     }
+
+
 
 }

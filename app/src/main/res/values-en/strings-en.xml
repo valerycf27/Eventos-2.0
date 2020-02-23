@@ -22,7 +22,7 @@
     <string name="eliminarEvento">Delete event</string>
     <string name="no">No</string>
     <string name="si">Yes</string>
-    <string name="acercaV2Mensaje">Android events\nEvents App\n(c) 2019 Valery Cortez</string>
+    <string name="acercaV2Mensaje">Android events\nEvents App\n(c) 2020 Valery Cortez</string>
     <string name="cerrar">Close</string>
     <string name="ListaEventos">Event list</string>
     <string name="detallesEvento">Event details</string>
@@ -37,5 +37,8 @@
     <string name="nombreObligatorio">Event must be named</string>
     <string name="a_adir_opini_n">Add opinion</string>
     <string name="comentario">Comment:</string>
+    <string name="titleLugarEvento">Event\'s place</string>
+    <string name="titleListaOpi">Opinion\'s list</string>
+    <string name="titleAnadirOpi">Add opinion</string>
 
 </resources>

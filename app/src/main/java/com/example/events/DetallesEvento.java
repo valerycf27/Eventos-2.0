@@ -23,7 +23,7 @@ public class DetallesEvento extends AppCompatActivity implements View.OnClickLis
 
         Intent intent = getIntent();
 
-        ImageView imgImagen = findViewById(R.id.imgVEvento);
+        //ImageView imgImagen = findViewById(R.id.imgVEvento);
         TextView tvNombreM = findViewById(R.id.tvNombreM);
         TextView tvLugarM = findViewById(R.id.tvLugarM);
         TextView tvFechaM = findViewById(R.id.tvFechaM);
@@ -39,8 +39,9 @@ public class DetallesEvento extends AppCompatActivity implements View.OnClickLis
 
         btAnadirOpi.setOnClickListener(this);
 
-        byte[] byteArray = intent.getByteArrayExtra("imagen");
+        /*byte[] byteArray = intent.getByteArrayExtra("imagen");
         Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+         */
 
         String nombre = intent.getStringExtra("nombre");
         String lugar = intent.getStringExtra("lugar");
@@ -55,7 +56,7 @@ public class DetallesEvento extends AppCompatActivity implements View.OnClickLis
         boolean guardado = intent.getBooleanExtra("guardado", false);
 
 
-        imgImagen.setImageBitmap(bmp);
+        //imgImagen.setImageBitmap(bmp);
         tvNombreM.setText(nombre);
         tvLugarM.setText(lugar);
         tvFechaM.setText(fecha);

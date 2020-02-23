@@ -21,7 +21,7 @@
     <string name="eliminarEvento">Eliminar evento</string>
     <string name="no">No</string>
     <string name="si">Si</string>
-    <string name="acercaV2Mensaje">Eventos Android\nApp para ver eventos\n(c) 2019 Valery Cortez</string>
+    <string name="acercaV2Mensaje">Eventos Android\nApp para ver eventos\n(c) 2020 Valery Cortez</string>
     <string name="cerrar">Cerrar</string>
     <string name="ListaEventos">Lista de eventos</string>
     <string name="detallesEvento">Detalles del evento</string>
@@ -36,4 +36,7 @@
     <string name="nombreObligatorio">El evento tiene que tener nombre</string>
     <string name="a_adir_opini_n">Añadir Opinión</string>
     <string name="comentario">Comentario:</string>
+    <string name="titleLugarEvento">Lugar del evento</string>
+    <string name="titleListaOpi">Lista de opiniones</string>
+    <string name="titleAnadirOpi">Añadir opinión</string>
 </resources>
