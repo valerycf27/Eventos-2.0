@@ -130,9 +130,15 @@ public class Formulario_evento extends AppCompatActivity implements DatePickerDi
 
 
                 Evento evento = new Evento(nombre, lugar, fecha, hora, aforo, organizador, artistasInvitados, descripcion, precio, estrellas, guardado);
-                evento.setImagen(imagen);
-                DataBase db = new DataBase(this);
-                db.nuevoEvento(evento);
+                //evento.setImagen(imagen);
+                evento.setLatitud(40.453005f);
+                evento.setLongitud(-3.6884557f);
+                //DataBase db = new DataBase(this);
+                //db.nuevoEvento(evento);
+
+                TareaAnadeEvento tareaAnadeEvento = new TareaAnadeEvento(this, evento);
+                tareaAnadeEvento.execute(Constantes.URL+"anadirEvento");
+
                 onBackPressed();
                 break;
         }
