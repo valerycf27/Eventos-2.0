@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-public class DetallesEvento extends AppCompatActivity {
+public class DetallesEvento extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +35,9 @@ public class DetallesEvento extends AppCompatActivity {
         TextView tvPrecioM = findViewById(R.id.tvPrecioM);
         CheckBox checkGuardar = findViewById(R.id.checkGuardar);
         RatingBar ratingBar = findViewById(R.id.ratingBar);
+        Button btAnadirOpi = findViewById(R.id.btAnadirOpi);
 
-
+        btAnadirOpi.setOnClickListener(this);
 
         byte[] byteArray = intent.getByteArrayExtra("imagen");
         Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
@@ -65,5 +68,15 @@ public class DetallesEvento extends AppCompatActivity {
         ratingBar.setRating(estrellas);
         checkGuardar.setChecked(guardado);
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view.getId()==R.id.btAnadirOpi){
+            TextView tvNombreM = findViewById(R.id.tvNombreM);
+            Intent intent = new Intent(this,Anadir_Opinion.class);
+            intent.putExtra("nombre", tvNombreM.getText());
+            startActivity(intent);
+        }
     }
 }

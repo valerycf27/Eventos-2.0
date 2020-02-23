@@ -35,5 +35,7 @@
     <string name="precioTieneQueSerNumero">Price must be a number</string>
     <string name="precioNoNegativo">Price can\'t be negative</string>
     <string name="nombreObligatorio">Event must be named</string>
+    <string name="a_adir_opini_n">Add opinion</string>
+    <string name="comentario">Comment:</string>
 
 </resources>

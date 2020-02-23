@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EventosGuardados"></activity>
+        <activity android:name=".Anadir_Opinion"></activity>
+        <activity android:name=".EventosGuardados" />
         <activity android:name=".DetallesEvento" />
         <activity android:name=".Formulario_evento" />
         <activity android:name=".MainActivity">

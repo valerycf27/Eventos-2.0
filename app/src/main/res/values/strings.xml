@@ -34,4 +34,6 @@
     <string name="precioTieneQueSerNumero">El precio tiene que ser un número</string>
     <string name="precioNoNegativo">El precio no puede ser negativo</string>
     <string name="nombreObligatorio">El evento tiene que tener nombre</string>
+    <string name="a_adir_opini_n">Añadir Opinión</string>
+    <string name="comentario">Comentario:</string>
 </resources>
