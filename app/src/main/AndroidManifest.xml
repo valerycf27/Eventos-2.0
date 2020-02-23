@@ -29,6 +29,7 @@
         <activity android:name=".EventosGuardados" />
         <activity android:name=".DetallesEvento" />
         <activity android:name=".Formulario_evento" />
+        <activity android:name=".PreferenciasActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

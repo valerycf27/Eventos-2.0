@@ -3,23 +3,21 @@ package com.example.events;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
+import androidx.preference.PreferenceManager;
 
-import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
@@ -30,6 +28,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences pref =
+                PreferenceManager.getDefaultSharedPreferences(
+                        this);
+
+        if(pref.getBoolean("opcion 1", false)){
+            setTheme(R.style.darktheme);
+        }
+
         setContentView(R.layout.activity_main);
         this.setTitle(R.string.ListaEventos);
 
@@ -144,7 +150,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.action_anadir_evento,menu);
+        MenuInflater inflater = getMenuInflater();
+
+        inflater.inflate(R.menu.action_anadir_evento,menu);
+        inflater.inflate(R.menu.menu_preferencias, menu);
+
         return true;
     }
 
@@ -168,6 +178,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.accionNuevoEvento:
                 Intent intent = new Intent(this, Formulario_evento.class);
                 startActivity(intent);
+                break;
+            case R.id.preferencias:
+                intent = new Intent(this, PreferenciasActivity.class);
+                startActivity(intent);
+
                 break;
 
         }
