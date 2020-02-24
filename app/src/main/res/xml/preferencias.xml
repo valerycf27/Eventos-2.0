@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="Categoría 1">
+    <PreferenceCategory android:title="Temas de la aplicación">
 
         <CheckBoxPreference
-            android:key="opcion 1"
-            android:summary="Ver sólo a los contactos favoritos"
-            android:title="Preferencia 1" />
+            android:key="opcion1"
+            android:title="Cambiar a modo oscuro"
+            android:summary="El tema de la aplicación se pondrá oscuro"/>
 
-        <EditTextPreference
-            android:key="opcion 2"
-            android:title="Preferencia 2"
-            android:summary="Cómo quieres que tus contactos te vean"
-            android:dialogTitle="Introduce un valor" />
+        <CheckBoxPreference
+            android:key="opcion2"
+            android:title="Cambiar el modo del ActionBar"
+            android:summary="El ActionBar de la aplicación se pondrá en modo gold" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Categoría 2">
         <EditTextPreference
-            android:key="opcion 3"
+            android:key="opcion4"
             android:title="Preferencia 3"
             android:summary="Cómo quieres que tus contactos te vean 3333"
             android:dialogTitle="Introduce un valor" />

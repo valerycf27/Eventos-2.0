@@ -8,7 +8,6 @@
     <uses-permission android:name="com.google.android.providers." />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,13 +16,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Relacionados"></activity>
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD9flnxFwr66BZaKXT21YkdSt0Did4Vh-0" />
-        <activity android:name=".ListaOpiniones"></activity>
+
+        <activity android:name=".ListaOpiniones" />
         <activity android:name=".Mapa" />
         <activity android:name=".Anadir_Opinion" />
         <activity android:name=".EventosGuardados" />

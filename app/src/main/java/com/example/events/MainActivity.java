@@ -28,12 +28,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences pref =
-                PreferenceManager.getDefaultSharedPreferences(
-                        this);
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
 
-        if(pref.getBoolean("opcion 1", false)){
+        if(pref.getBoolean("opcion1", false) && pref.getBoolean("opcion2", false)){
+            setTheme(R.style.ambostheme);
+        }else if(pref.getBoolean("opcion1", false)){
             setTheme(R.style.darktheme);
+        }else if(pref.getBoolean("opcion2", false)){
+            setTheme(R.style.goldtheme);
         }
 
         setContentView(R.layout.activity_main);
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //eventos.addAll(db.getEventos());
         adaptador.notifyDataSetChanged();
 
-        DescargaDatos descargaDatos = new DescargaDatos (this,eventos);
+        DescargaDatos descargaDatos = new DescargaDatos (this,eventos, "main lista");
         descargaDatos.execute(Constantes.URL+"eventos");
     }
 

@@ -17,12 +17,12 @@ public class DescargaDatos extends AsyncTask<String, Void, Void> {
     private ProgressDialog dialog;
     private Activity act;
     ArrayList arrListaEventos;
-    //private String procedencia;
+    private String procedencia;
 
-    public DescargaDatos(Activity act, ArrayList arrListeventos) {
+    public DescargaDatos(Activity act, ArrayList arrListeventos, String procedencia) {
         this.act = act;
         this.arrListaEventos = arrListeventos;
-        //this.procedencia = procedencia.toLowerCase();
+        this.procedencia = procedencia.toLowerCase();
     }
 
     @Override
@@ -33,36 +33,23 @@ public class DescargaDatos extends AsyncTask<String, Void, Void> {
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
 
-            Evento[] eventosArray = restTemplate.getForObject(url, Evento[].class);
-            arrListaEventos.addAll(Arrays.asList(eventosArray));
-            /*switch (procedencia) {
+            switch (procedencia) {
 
-                case "lista opiniones":
-                    Opinion[] opinionesArray = restTemplate.getForObject(url, Opinion[].class);
+                case "lista lugar":
+
+                case "main lista":
+
+                case "lista organizador":
+
+                case "mapa":
+                    Evento[] opinionesArray = restTemplate.getForObject(url, Evento[].class);
                     arrListaEventos.addAll(Arrays.asList(opinionesArray));
-                    break;
-                case "lista tiendas mapa":
-                    Tienda[] tiendasArray = restTemplate.getForObject(url, Tienda[].class);
-                    arrListaEventos.addAll(Arrays.asList(tiendasArray));
-                    break;
-
-                case "lista principal":
-
-                case "lista tab desarrolladora":
-
-                case "lista tab plataforma":
-
-                case "lista tab tienda":
-
-                case "lista tab genero":
-                    Videojuego[] videojuegosArray = restTemplate.getForObject(url, Videojuego[].class);
-                    arrListaEventos.addAll(Arrays.asList(videojuegosArray));
                     break;
 
                 default:
                     Log.e("LLAMADA NO ENCONTRADA", "Se ha llamado a la descarga de datos desde un lugar no controlado");
                     break;
-            }*/
+            }
         } catch (Exception e) {
             Log.e("DAVID ERROR", e.getMessage());
             error = true;
@@ -104,37 +91,23 @@ public class DescargaDatos extends AsyncTask<String, Void, Void> {
         if (dialog != null)
             dialog.dismiss();
 
-        MainActivity.adaptador.notifyDataSetChanged();
-        /*switch (procedencia) {
+        //MainActivity.adaptador.notifyDataSetChanged();
+        switch (procedencia) {
 
-            case "lista opiniones":
-                ListaOpiniones.adaptador.notifyDataSetChanged();
+            case "lista lugar":
+                LugarFragment.adaptador.notifyDataSetChanged();
                 break;
 
-            case "lista principal":
+            case "main lista":
                 MainActivity.adaptador.notifyDataSetChanged();
                 break;
 
-            case "lista tab desarrolladora":
-                DesarrolladoraFragment.adaptador.notifyDataSetChanged();
-                break;
-
-            case "lista tab plataforma":
-                PlataformaFragment.adaptador.notifyDataSetChanged();
-                break;
-
-            case "lista tab tienda":
-                TiendaFragment.adaptador.notifyDataSetChanged();
-                break;
-
-            case "lista tab genero":
-                GeneroFragment.adaptador.notifyDataSetChanged();
-                break;
-            case "lista tiendas mapa":
+            case "lista organizador":
+                OrganizadorFragment.adaptador.notifyDataSetChanged();
                 break;
             default:
                 Log.e("LLAMADA NO ENCONTRADA", "Se ha llamado al refresco del adaptador desde un lugar desconocido");
                 break;
-        }*/
+        }
     }
 }

@@ -35,9 +35,12 @@ public class DetallesEvento extends AppCompatActivity implements View.OnClickLis
         TextView tvPrecioM = findViewById(R.id.tvPrecioM);
         CheckBox checkGuardar = findViewById(R.id.checkGuardar);
         RatingBar ratingBar = findViewById(R.id.ratingBar);
+
         Button btAnadirOpi = findViewById(R.id.btAnadirOpi);
+        Button btVerRelacionados = findViewById(R.id.btVerRelacionados);
 
         btAnadirOpi.setOnClickListener(this);
+        btVerRelacionados.setOnClickListener(this);
 
         /*byte[] byteArray = intent.getByteArrayExtra("imagen");
         Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
@@ -73,11 +76,25 @@ public class DetallesEvento extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-        if(view.getId()==R.id.btAnadirOpi){
-            TextView tvNombreM = findViewById(R.id.tvNombreM);
-            Intent intent = new Intent(this,Anadir_Opinion.class);
-            intent.putExtra("nombre", tvNombreM.getText());
-            startActivity(intent);
+
+        switch (view.getId()){
+
+            case R.id.btAnadirOpi:
+                TextView tvNombreM = findViewById(R.id.tvNombreM);
+                Intent intent = new Intent(this,Anadir_Opinion.class);
+                intent.putExtra("nombre", tvNombreM.getText().toString());
+                startActivity(intent);
+                break;
+
+            case R.id.btVerRelacionados:
+                TextView tvLugarM = findViewById(R.id.tvLugarM);
+                TextView tvOrganizadorM = findViewById(R.id.tvOrganizadorM);
+
+                Intent intentRelacionados = new Intent(this, Relacionados.class);
+                intentRelacionados.putExtra("lugar", tvLugarM.getText().toString());
+                intentRelacionados.putExtra("organizador", tvOrganizadorM.getText().toString());
+                startActivity(intentRelacionados);
+
         }
     }
 }

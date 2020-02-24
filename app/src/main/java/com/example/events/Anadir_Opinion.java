@@ -1,9 +1,15 @@
 package com.example.events;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +21,15 @@ public class Anadir_Opinion extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+
+        if(pref.getBoolean("opcion1", false) && pref.getBoolean("opcion2", false)){
+            setTheme(R.style.ambostheme);
+        }else if(pref.getBoolean("opcion1", false)){
+            setTheme(R.style.darktheme);
+        }else if(pref.getBoolean("opcion2", false)){
+            setTheme(R.style.goldtheme);
+        }
         setContentView(R.layout.activity_anadir__opinion);
         this.setTitle(getString(R.string.titleAnadirOpi));
 
@@ -51,5 +66,27 @@ public class Anadir_Opinion extends AppCompatActivity implements View.OnClickLis
 
         txComentario.setText("");
         ratingBar2.setRating(0);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+
+        inflater.inflate(R.menu.menu_preferencias, menu);
+
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.preferencias:
+                Intent intent = new Intent(this, PreferenciasActivity.class);
+                startActivity(intent);
+
+                break;
+        }
+        return true;
     }
 }

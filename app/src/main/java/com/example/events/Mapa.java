@@ -99,7 +99,7 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
         eventoLong = intent.getFloatExtra("eventoLong", 0);
         eventoNom = intent.getStringExtra("eventoNom");
         eventoLugar = intent.getStringExtra("eventoLug");
-        DescargaDatos tarea = new DescargaDatos(this, arrayTiendas);
+        DescargaDatos tarea = new DescargaDatos(this, arrayTiendas, "mapa");
         tarea.execute(Constantes.URL+"eventosNombre?nombre="+eventoNom);
     }
 
