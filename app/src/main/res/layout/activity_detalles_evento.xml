@@ -203,11 +203,5 @@
         android:layout_marginTop="10dp"
         android:text="@string/a_adir_opini_n" />
 
-    <Button
-        android:id="@+id/btVerRelacionados"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ver Relacionados" />
-
 
 </LinearLayout>

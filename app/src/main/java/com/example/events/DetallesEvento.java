@@ -1,11 +1,15 @@
 package com.example.events;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -15,6 +19,8 @@ import android.widget.TextView;
 
 public class DetallesEvento extends AppCompatActivity implements View.OnClickListener {
 
+    TextView tvLugarM;
+    TextView tvOrganizadorM;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,11 +31,11 @@ public class DetallesEvento extends AppCompatActivity implements View.OnClickLis
 
         //ImageView imgImagen = findViewById(R.id.imgVEvento);
         TextView tvNombreM = findViewById(R.id.tvNombreM);
-        TextView tvLugarM = findViewById(R.id.tvLugarM);
+        tvLugarM = findViewById(R.id.tvLugarM);
         TextView tvFechaM = findViewById(R.id.tvFechaM);
         TextView tvHoraM = findViewById(R.id.tvHoraM);
         TextView tvAforoM = findViewById(R.id.tvAforoM);
-        TextView tvOrganizadorM = findViewById(R.id.tvOrganizadorM);
+        tvOrganizadorM = findViewById(R.id.tvOrganizadorM);
         TextView tvArtis_InvM = findViewById(R.id.tvArtis_InvM);
         TextView tvDescripcionM = findViewById(R.id.tvDescripcionM);
         TextView tvPrecioM = findViewById(R.id.tvPrecioM);
@@ -37,10 +43,8 @@ public class DetallesEvento extends AppCompatActivity implements View.OnClickLis
         RatingBar ratingBar = findViewById(R.id.ratingBar);
 
         Button btAnadirOpi = findViewById(R.id.btAnadirOpi);
-        Button btVerRelacionados = findViewById(R.id.btVerRelacionados);
 
         btAnadirOpi.setOnClickListener(this);
-        btVerRelacionados.setOnClickListener(this);
 
         /*byte[] byteArray = intent.getByteArrayExtra("imagen");
         Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
@@ -86,15 +90,31 @@ public class DetallesEvento extends AppCompatActivity implements View.OnClickLis
                 startActivity(intent);
                 break;
 
-            case R.id.btVerRelacionados:
-                TextView tvLugarM = findViewById(R.id.tvLugarM);
-                TextView tvOrganizadorM = findViewById(R.id.tvOrganizadorM);
+        }
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+
+        inflater.inflate(R.menu.menu_relacionados,menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.itemRelacionados:
                 Intent intentRelacionados = new Intent(this, Relacionados.class);
                 intentRelacionados.putExtra("lugar", tvLugarM.getText().toString());
                 intentRelacionados.putExtra("organizador", tvOrganizadorM.getText().toString());
                 startActivity(intentRelacionados);
-
+                break;
         }
+
+        return true;
     }
 }

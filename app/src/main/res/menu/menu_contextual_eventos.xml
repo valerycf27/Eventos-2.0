@@ -10,4 +10,7 @@
     <item
         android:id="@+id/verMapa"
         android:title="Ver en Mapa" />
+    <item
+        android:id="@+id/verOpiniones"
+        android:title="Ver opiniones" />
 </menu>

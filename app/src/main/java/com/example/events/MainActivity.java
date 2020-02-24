@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -144,6 +145,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intentMapa.putExtra("eventoLug", eventos.get(posicion).getLugar());
 
                 startActivity(intentMapa);
+                return true;
+
+            case R.id.verOpiniones:
+                Intent intent = new Intent(this,ListaOpiniones.class);
+                intent.putExtra("eventoNom", eventos.get(posicion).getNombre());
+                startActivity(intent);
+
                 return true;
             default:
                 return super.onContextItemSelected(item);
