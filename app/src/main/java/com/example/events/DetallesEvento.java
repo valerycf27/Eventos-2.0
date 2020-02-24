@@ -2,10 +2,14 @@ package com.example.events;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -112,6 +116,17 @@ public class DetallesEvento extends AppCompatActivity implements View.OnClickLis
                 intentRelacionados.putExtra("lugar", tvLugarM.getText().toString());
                 intentRelacionados.putExtra("organizador", tvOrganizadorM.getText().toString());
                 startActivity(intentRelacionados);
+                break;
+
+            case R.id.itemLlamada:
+                //TODO implementar número para llamar de cada Evento
+                String numTel = "649657020";/*selects del telefono del evento en el que me encuentro*/
+                String dial = "tel:" + numTel;
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse(dial));
+                if(ActivityCompat.checkSelfPermission(DetallesEvento.this, Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED){
+                    return true;
+                }
+                startActivity(intent);
                 break;
         }
 
