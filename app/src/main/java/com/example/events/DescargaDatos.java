@@ -45,13 +45,16 @@ public class DescargaDatos extends AsyncTask<String, Void, Void> {
                     Evento[] opinionesArray = restTemplate.getForObject(url, Evento[].class);
                     arrListaEventos.addAll(Arrays.asList(opinionesArray));
                     break;
-
+                case "lista opiniones":
+                    Comentario[] comentariosArray = restTemplate.getForObject(url, Comentario[].class);
+                    arrListaEventos.addAll(Arrays.asList(comentariosArray));
+                    break;
                 default:
                     Log.e("LLAMADA NO ENCONTRADA", "Se ha llamado a la descarga de datos desde un lugar no controlado");
                     break;
             }
         } catch (Exception e) {
-            Log.e("DAVID ERROR", e.getMessage());
+            Log.e("VALERY ERROR", e.getMessage());
             error = true;
         }
 
@@ -104,6 +107,9 @@ public class DescargaDatos extends AsyncTask<String, Void, Void> {
 
             case "lista organizador":
                 OrganizadorFragment.adaptador.notifyDataSetChanged();
+                break;
+            case "lista opiniones":
+                ListaOpiniones.adaptador.notifyDataSetChanged();
                 break;
             default:
                 Log.e("LLAMADA NO ENCONTRADA", "Se ha llamado al refresco del adaptador desde un lugar desconocido");

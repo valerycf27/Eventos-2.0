@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (item.getItemId()){
 
-            case R.id.accionDetalles:
+            /*case R.id.accionDetalles:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(R.string.acercaV2Mensaje).setTitle(R.string.acercaEventosv2)
                         .setNegativeButton(R.string.cerrar,
@@ -184,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     }});
 
                 builder.create().show();
-                break;
+                break;*/
             case R.id.accionNuevoEvento:
                 Intent intent = new Intent(this, Formulario_evento.class);
                 startActivity(intent);
@@ -194,6 +194,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
 
                 break;
+            /*case R.id.itemMapaEventos:
+                //TODO implementar mapa con todos los eventos
+                break;
+
+             */
 
         }
 

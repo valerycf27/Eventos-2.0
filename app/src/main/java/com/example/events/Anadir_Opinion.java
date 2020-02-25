@@ -54,8 +54,16 @@ public class Anadir_Opinion extends AppCompatActivity implements View.OnClickLis
                 restablecer();
                 break;
             case R.id.btGuardar:
-                //TODO guardar comentario y valoración en Spring
-                //restablecer();
+                TextView tvNombreM = findViewById(R.id.tvNombreM);
+                EditText txComentario = findViewById(R.id.txComentario);
+                RatingBar ratingBar2 = findViewById(R.id.ratingBar2);
+
+                Comentario comentario = new Comentario(tvNombreM.getText().toString(), txComentario.getText().toString(), ratingBar2.getRating());
+
+                InsertaOpinion tarea = new InsertaOpinion(this, comentario);
+                tarea.execute(Constantes.URL+"addComentario?");
+
+                onBackPressed();
                 break;
         }
     }
