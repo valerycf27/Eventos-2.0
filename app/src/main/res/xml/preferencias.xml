@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="Temas de la aplicación">
+    <PreferenceCategory android:title="General">
+        <EditTextPreference
+            android:key="Nombre Usuario Publico"
+            android:title="Nombre de usuario público"
+            android:summary="Elige qué nombre quieres que se vea en tus comentarios."
+            android:dialogTitle="Introduce un nombre:" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Personalizar la aplicación">
 
         <CheckBoxPreference
             android:key="opcion1"
@@ -12,12 +19,6 @@
             android:title="Cambiar el modo del ActionBar"
             android:summary="El ActionBar de la aplicación se pondrá en modo gold" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="Categoría 2">
-        <EditTextPreference
-            android:key="Nombre Usuario Publico"
-            android:title="Nombre de Usuario público"
-            android:summary="Elige qué nombre quieres que se vea en tus comentarios."
-            android:dialogTitle="Introduce un nombre:" />
-    </PreferenceCategory>
+
 
 </PreferenceScreen>
