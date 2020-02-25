@@ -45,7 +45,7 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
 
     private float eventoLat;
     private float eventoLong;
-    private String eventoLugar, eventoNom;
+    private String eventoLugar, eventoNom, procedencia;
     private ArrayList<Evento> arrayTiendas = new ArrayList<>();
 
     Location currentLocation;
@@ -67,9 +67,6 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
         } catch (Exception e) {
             e.printStackTrace();
         }
-/*
-        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);*/
     }
 
     private void fetchLocation() {
@@ -85,7 +82,7 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
             public void onSuccess(Location location) {
                 if (location != null) {
                     currentLocation = location;
-                    Toast.makeText(getApplicationContext(), currentLocation.getLatitude() + "" + currentLocation.getLongitude(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), currentLocation.getLatitude() + "" + currentLocation.getLongitude(), Toast.LENGTH_SHORT).show();
 
                     MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
 
@@ -96,12 +93,21 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
 
 
         Intent intent = getIntent();
-        eventoLat = intent.getFloatExtra("eventoLat", 0);
-        eventoLong = intent.getFloatExtra("eventoLong", 0);
-        eventoNom = intent.getStringExtra("eventoNom");
-        eventoLugar = intent.getStringExtra("eventoLug");
-        DescargaDatos tarea = new DescargaDatos(this, arrayTiendas, "mapa");
-        tarea.execute(Constantes.URL+"eventosNombre?nombre="+eventoNom);
+        procedencia = intent.getStringExtra("procedencia");
+
+        if(procedencia.equals("mapaEvento")){
+            eventoLat = intent.getFloatExtra("eventoLat", 0);
+            eventoLong = intent.getFloatExtra("eventoLong", 0);
+            eventoNom = intent.getStringExtra("eventoNom");
+            eventoLugar = intent.getStringExtra("eventoLug");
+
+            DescargaDatos tarea = new DescargaDatos(this, arrayTiendas, "mapa");
+            tarea.execute(Constantes.URL + "eventosNombre?nombre=" + eventoNom);
+        }else{
+            arrayTiendas = MainActivity.eventos;
+        }
+
+
     }
 
     @Override
@@ -118,18 +124,20 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
         // Coloca la vista del mapa sobre la posición del restaurante
         // y activa el zoom para verlo de cerca
         mapa.moveCamera(camara);
-        mapa.animateCamera(CameraUpdateFactory.zoomTo(17.0f));
+        mapa.animateCamera(CameraUpdateFactory.zoomTo(13.0f));
 
-        /*DESCOMENTAR SI SE REQUIERE PINTAR MÄS DE UN PUNTO AL QUE IR
-        for(Evento eventos : arrayTiendas){
-            // Añade una marca en la posición del restaurante con el nombre de éste
+        if (procedencia.equals("mapaTotal"))
+            /*DESCOMENTAR SI SE REQUIERE PINTAR MÄS DE UN PUNTO AL QUE IR*/
+            for (Evento eventos : arrayTiendas) {
+                // Añade una marca en la posición del restaurante con el nombre de éste
+                mapa.addMarker(new MarkerOptions()
+                        .position(new LatLng(eventos.getLatitud(), eventos.getLongitud()))
+                        .title(eventos.getNombre()));
+            }
+        else
             mapa.addMarker(new MarkerOptions()
                     .position(new LatLng(eventoLat, eventoLong))
                     .title(eventoLugar));
-        }*/
-        mapa.addMarker(new MarkerOptions()
-                .position(new LatLng(eventoLat, eventoLong))
-                .title(eventoLugar));
 
         //MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("I am here!").icon(bitmapDescriptorFromVector(getApplicationContext(),R.drawable.));
         MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("Te encuentras aquí").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
@@ -146,40 +154,41 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
                 .build();
 
         //Log.d("DAVID LOC", latLng.latitude+","+latLng.longitude+"\t"+arrayTiendas.get(0).getLatitud()+","+ arrayTiendas.get(0).getLongitud());
+        if(procedencia.equals("mapaEvento")){
+            DirectionsApiRequest req = DirectionsApi.getDirections(context, latLng.latitude + "," + latLng.longitude, arrayTiendas.get(0).getLatitud() + "," + arrayTiendas.get(0).getLongitud());
+            try {
+                DirectionsResult res = req.await();
 
-        DirectionsApiRequest req = DirectionsApi.getDirections(context, latLng.latitude+","+latLng.longitude, arrayTiendas.get(0).getLatitud()+","+ arrayTiendas.get(0).getLongitud());
-        try {
-            DirectionsResult res = req.await();
+                //Loop through legs and steps to get encoded polylines of each step
+                if (res.routes != null && res.routes.length > 0) {
+                    DirectionsRoute route = res.routes[0];
 
-            //Loop through legs and steps to get encoded polylines of each step
-            if (res.routes != null && res.routes.length > 0) {
-                DirectionsRoute route = res.routes[0];
-
-                if (route.legs !=null) {
-                    for(int i=0; i<route.legs.length; i++) {
-                        DirectionsLeg leg = route.legs[i];
-                        if (leg.steps != null) {
-                            for (int j=0; j<leg.steps.length;j++){
-                                DirectionsStep step = leg.steps[j];
-                                if (step.steps != null && step.steps.length >0) {
-                                    for (int k=0; k<step.steps.length;k++){
-                                        DirectionsStep step1 = step.steps[k];
-                                        EncodedPolyline points1 = step1.polyline;
-                                        if (points1 != null) {
-                                            //Decode polyline and add points to list of route coordinates
-                                            List<com.google.maps.model.LatLng> coords1 = points1.decodePath();
-                                            for (com.google.maps.model.LatLng coord1 : coords1) {
-                                                path.add(new LatLng(coord1.lat, coord1.lng));
+                    if (route.legs != null) {
+                        for (int i = 0; i < route.legs.length; i++) {
+                            DirectionsLeg leg = route.legs[i];
+                            if (leg.steps != null) {
+                                for (int j = 0; j < leg.steps.length; j++) {
+                                    DirectionsStep step = leg.steps[j];
+                                    if (step.steps != null && step.steps.length > 0) {
+                                        for (int k = 0; k < step.steps.length; k++) {
+                                            DirectionsStep step1 = step.steps[k];
+                                            EncodedPolyline points1 = step1.polyline;
+                                            if (points1 != null) {
+                                                //Decode polyline and add points to list of route coordinates
+                                                List<com.google.maps.model.LatLng> coords1 = points1.decodePath();
+                                                for (com.google.maps.model.LatLng coord1 : coords1) {
+                                                    path.add(new LatLng(coord1.lat, coord1.lng));
+                                                }
                                             }
                                         }
-                                    }
-                                } else {
-                                    EncodedPolyline points = step.polyline;
-                                    if (points != null) {
-                                        //Decode polyline and add points to list of route coordinates
-                                        List<com.google.maps.model.LatLng> coords = points.decodePath();
-                                        for (com.google.maps.model.LatLng coord : coords) {
-                                            path.add(new LatLng(coord.lat, coord.lng));
+                                    } else {
+                                        EncodedPolyline points = step.polyline;
+                                        if (points != null) {
+                                            //Decode polyline and add points to list of route coordinates
+                                            List<com.google.maps.model.LatLng> coords = points.decodePath();
+                                            for (com.google.maps.model.LatLng coord : coords) {
+                                                path.add(new LatLng(coord.lat, coord.lng));
+                                            }
                                         }
                                     }
                                 }
@@ -187,15 +196,14 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
                         }
                     }
                 }
+            } catch (Exception ex) {
+                Log.e("VALERY MAPA", ex.getLocalizedMessage());
             }
-        } catch(Exception ex) {
-            Log.e("DAVID MAPA", ex.getLocalizedMessage());
-        }
-
-        //Draw the polyline
-        if (path.size() > 0) {
-            PolylineOptions opts = new PolylineOptions().addAll(path).color(Color.BLUE).width(5);
-            mapa.addPolyline(opts);
+            //Draw the polyline
+            if (path.size() > 0) {
+                PolylineOptions opts = new PolylineOptions().addAll(path).color(Color.BLUE).width(5);
+                mapa.addPolyline(opts);
+            }
         }
 
 

@@ -14,10 +14,10 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="Categoría 2">
         <EditTextPreference
-            android:key="opcion4"
-            android:title="Preferencia 3"
-            android:summary="Cómo quieres que tus contactos te vean 3333"
-            android:dialogTitle="Introduce un valor" />
+            android:key="Nombre Usuario Publico"
+            android:title="Nombre de Usuario público"
+            android:summary="Elige qué nombre quieres que se vea en tus comentarios."
+            android:dialogTitle="Introduce un nombre:" />
     </PreferenceCategory>
 
 </PreferenceScreen>

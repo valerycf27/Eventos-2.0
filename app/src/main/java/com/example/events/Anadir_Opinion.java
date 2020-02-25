@@ -17,11 +17,11 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 public class Anadir_Opinion extends AppCompatActivity implements View.OnClickListener{
-
+    SharedPreferences pref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        pref = PreferenceManager.getDefaultSharedPreferences(this);
 
         if(pref.getBoolean("opcion1", false) && pref.getBoolean("opcion2", false)){
             setTheme(R.style.ambostheme);
@@ -58,7 +58,11 @@ public class Anadir_Opinion extends AppCompatActivity implements View.OnClickLis
                 EditText txComentario = findViewById(R.id.txComentario);
                 RatingBar ratingBar2 = findViewById(R.id.ratingBar2);
 
-                Comentario comentario = new Comentario(tvNombreM.getText().toString(), txComentario.getText().toString(), ratingBar2.getRating());
+                String usuario = "Anónimo";
+                    if ( !pref.getString("Nombre Usuario Publico", "Anónimo").equals(""))
+                        usuario = pref.getString("Nombre Usuario Publico", "Anónimo");
+
+                Comentario comentario = new Comentario(usuario, tvNombreM.getText().toString(), txComentario.getText().toString(), ratingBar2.getRating());
 
                 InsertaOpinion tarea = new InsertaOpinion(this, comentario);
                 tarea.execute(Constantes.URL+"addComentario?");

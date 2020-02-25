@@ -12,17 +12,21 @@
 
         <TextView
             android:id="@+id/txvNomEvento"
-            android:layout_width="fill_parent"
+            android:layout_width="531dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="text view" />
+            android:text="text view"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
 
         <TextView
             android:id="@+id/txvValoracionEvento"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"/>
     </LinearLayout>
 
     <TextView

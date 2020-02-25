@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
-    private ArrayList<Evento> eventos;
+    public static ArrayList<Evento> eventos;
     public static EventoAdapter adaptador;
 
     @Override
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intentMapa.putExtra("eventoLong", eventos.get(posicion).getLongitud());
                 intentMapa.putExtra("eventoNom", eventos.get(posicion).getNombre());
                 intentMapa.putExtra("eventoLug", eventos.get(posicion).getLugar());
-
+                intentMapa.putExtra("procedencia", "mapaEvento");
                 startActivity(intentMapa);
                 return true;
 
@@ -194,11 +194,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
 
                 break;
-            /*case R.id.itemMapaEventos:
-                //TODO implementar mapa con todos los eventos
-                break;
+            case R.id.itemMapaEventos:
 
-             */
+                Intent intentMapa = new Intent(this, Mapa.class);
+                intentMapa.putExtra("procedencia", "mapaTotal");
+                startActivity(intentMapa);
+                return true;
+
 
         }
 

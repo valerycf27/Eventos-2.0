@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -22,7 +21,7 @@ public class ComentarioAdapter extends BaseAdapter {
     }
 
     static class ViewHolder{
-        TextView nombreEvento;
+        TextView usuario;
         TextView contenido;
         TextView valoracion;
     }
@@ -34,7 +33,7 @@ public class ComentarioAdapter extends BaseAdapter {
         if(convertView == null){
             convertView = layoutinflater.inflate(R.layout.item_comentario, null);
             viewholder = new ViewHolder();
-            viewholder.nombreEvento = convertView.findViewById(R.id.txvNomEvento);
+            viewholder.usuario = convertView.findViewById(R.id.txvNomEvento);
             viewholder.contenido = convertView.findViewById(R.id.txvDescripcionEvento);
             viewholder.valoracion = convertView.findViewById(R.id.txvValoracionEvento);
             convertView.setTag(viewholder);
@@ -42,7 +41,7 @@ public class ComentarioAdapter extends BaseAdapter {
             viewholder = (ViewHolder) convertView.getTag();
 
         Comentario comentario = comentarios.get(position);
-        viewholder.nombreEvento.setText(comentario.getNombreEvento());
+        viewholder.usuario.setText(comentario.getUsuario());
         viewholder.contenido.setText(comentario.getContenido());
         viewholder.valoracion.setText(String.valueOf(comentario.getValoracion()));
 

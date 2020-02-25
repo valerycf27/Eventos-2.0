@@ -2,11 +2,12 @@ package com.example.events;
 
 public class Comentario {
     private int id;
-    private String nombreEvento;
+    private String nombreEvento, usuario;
     private String contenido;
     private float valoracion;
 
-    public Comentario(String nombreEvento, String contenido, float valoracion) {
+    public Comentario(String usuario, String nombreEvento, String contenido, float valoracion) {
+        this.usuario = usuario;
         this.nombreEvento = nombreEvento;
         this.contenido = contenido;
         this.valoracion = valoracion;
@@ -45,5 +46,13 @@ public class Comentario {
 
     public void setValoracion(float valoracion) {
         this.valoracion = valoracion;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 }

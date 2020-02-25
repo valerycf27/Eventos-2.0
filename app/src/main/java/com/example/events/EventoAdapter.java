@@ -36,7 +36,7 @@ public class EventoAdapter extends BaseAdapter {
         if(convertView == null){
             convertView = layoutinflater.inflate(R.layout.item_evento, null);
             viewholder = new ViewHolder();
-            viewholder.imagen = convertView.findViewById(R.id.imgEvento);
+            //viewholder.imagen = convertView.findViewById(R.id.imgEvento);
             viewholder.nombre = convertView.findViewById(R.id.tvNombEvento);
             viewholder.lugar = convertView.findViewById(R.id.tvLugarMos);
             viewholder.dia = convertView.findViewById(R.id.tvDiaMos);
@@ -46,7 +46,7 @@ public class EventoAdapter extends BaseAdapter {
             viewholder = (ViewHolder) convertView.getTag();
 
         Evento evento = eventos.get(position);
-        viewholder.imagen.setImageBitmap(evento.getImagen());
+        //viewholder.imagen.setImageBitmap(evento.getImagen());
         viewholder.nombre.setText(evento.getNombre());
         viewholder.lugar.setText(evento.getLugar());
         viewholder.dia.setText(evento.getFecha());
