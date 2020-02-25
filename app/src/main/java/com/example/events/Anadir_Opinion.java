@@ -66,7 +66,7 @@ public class Anadir_Opinion extends AppCompatActivity implements View.OnClickLis
 
                 InsertaOpinion tarea = new InsertaOpinion(this, comentario);
                 tarea.execute(Constantes.URL+"addComentario?");
-
+                finish();
                 onBackPressed();
                 break;
         }
@@ -100,5 +100,11 @@ public class Anadir_Opinion extends AppCompatActivity implements View.OnClickLis
                 break;
         }
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

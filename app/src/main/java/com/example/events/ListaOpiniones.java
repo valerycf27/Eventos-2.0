@@ -1,8 +1,10 @@
 package com.example.events;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +22,17 @@ public class ListaOpiniones extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+
+        if(pref.getBoolean("opcion1", false) && pref.getBoolean("opcion2", false)){
+            setTheme(R.style.ambostheme);
+        }else if(pref.getBoolean("opcion1", false)){
+            setTheme(R.style.darktheme);
+        }else if(pref.getBoolean("opcion2", false)){
+            setTheme(R.style.goldtheme);
+        }
+
         setContentView(R.layout.activity_lista_opiniones);
         this.setTitle(getString(R.string.titleListaOpi));
 
@@ -65,5 +78,11 @@ public class ListaOpiniones extends AppCompatActivity implements View.OnClickLis
                 break;
 
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

@@ -1,10 +1,12 @@
 package com.example.events;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -31,6 +33,17 @@ public class Formulario_evento extends AppCompatActivity implements DatePickerDi
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+
+        if(pref.getBoolean("opcion1", false) && pref.getBoolean("opcion2", false)){
+            setTheme(R.style.ambostheme);
+        }else if(pref.getBoolean("opcion1", false)){
+            setTheme(R.style.darktheme);
+        }else if(pref.getBoolean("opcion2", false)){
+            setTheme(R.style.goldtheme);
+        }
+
         setContentView(R.layout.activity_formulario_evento);
         this.setTitle(R.string.nuevoEvento);
 
@@ -222,6 +235,12 @@ public class Formulario_evento extends AppCompatActivity implements DatePickerDi
             ImageView imageView = (ImageView) findViewById(R.id.imvFotoFormulario);
             imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 
 

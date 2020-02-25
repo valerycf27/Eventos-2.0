@@ -200,11 +200,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intentMapa.putExtra("procedencia", "mapaTotal");
                 startActivity(intentMapa);
                 return true;
-
-
         }
-
-
         return true;
     }
 
@@ -232,5 +228,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         startActivity(intentMapa);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

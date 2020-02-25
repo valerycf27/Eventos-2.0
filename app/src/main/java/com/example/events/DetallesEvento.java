@@ -3,9 +3,11 @@ package com.example.events;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.preference.PreferenceManager;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -28,6 +30,16 @@ public class DetallesEvento extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+
+        if(pref.getBoolean("opcion1", false) && pref.getBoolean("opcion2", false)){
+            setTheme(R.style.ambostheme);
+        }else if(pref.getBoolean("opcion1", false)){
+            setTheme(R.style.darktheme);
+        }else if(pref.getBoolean("opcion2", false)){
+            setTheme(R.style.goldtheme);
+        }
         setContentView(R.layout.activity_detalles_evento);
         this.setTitle(R.string.detallesEvento);
 
@@ -131,5 +143,11 @@ public class DetallesEvento extends AppCompatActivity implements View.OnClickLis
         }
 
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

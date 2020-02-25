@@ -3,9 +3,11 @@ package com.example.events;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.preference.PreferenceManager;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -55,6 +57,17 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+
+        if(pref.getBoolean("opcion1", false) && pref.getBoolean("opcion2", false)){
+            setTheme(R.style.ambostheme);
+        }else if(pref.getBoolean("opcion1", false)){
+            setTheme(R.style.darktheme);
+        }else if(pref.getBoolean("opcion2", false)){
+            setTheme(R.style.goldtheme);
+        }
+
         setContentView(R.layout.activity_mapa);
         this.setTitle("Evento en el mapa");
 
@@ -101,8 +114,8 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
             eventoNom = intent.getStringExtra("eventoNom");
             eventoLugar = intent.getStringExtra("eventoLug");
 
-            DescargaDatos tarea = new DescargaDatos(this, arrayTiendas, "mapa");
-            tarea.execute(Constantes.URL + "eventosNombre?nombre=" + eventoNom);
+            /*DescargaDatos tarea = new DescargaDatos(this, arrayTiendas, "mapa");
+            tarea.execute(Constantes.URL + "eventosNombre?nombre=" + eventoNom);*/
         }else{
             arrayTiendas = MainActivity.eventos;
         }
@@ -155,7 +168,7 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
 
         //Log.d("DAVID LOC", latLng.latitude+","+latLng.longitude+"\t"+arrayTiendas.get(0).getLatitud()+","+ arrayTiendas.get(0).getLongitud());
         if(procedencia.equals("mapaEvento")){
-            DirectionsApiRequest req = DirectionsApi.getDirections(context, latLng.latitude + "," + latLng.longitude, arrayTiendas.get(0).getLatitud() + "," + arrayTiendas.get(0).getLongitud());
+            DirectionsApiRequest req = DirectionsApi.getDirections(context, latLng.latitude + "," + latLng.longitude, eventoLat + "," + eventoLong);
             try {
                 DirectionsResult res = req.await();
 
@@ -242,5 +255,11 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }
