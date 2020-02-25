@@ -68,4 +68,6 @@ public class OrganizadorFragment extends Fragment {
 
         tarea.execute(Constantes.URL+"eventosOrganizador?organizador="+ organizador);
     }
+
+
 }

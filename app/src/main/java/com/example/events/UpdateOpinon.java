@@ -1,0 +1,49 @@
+
+package com.example.events;
+
+import android.app.Activity;
+import android.os.AsyncTask;
+import android.util.Log;
+
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
+
+import java.net.URL;
+
+
+public class UpdateOpinon extends AsyncTask<String, Void, Void> {
+    Evento evento;
+    Activity act;
+
+    public UpdateOpinon(Activity act, Evento evento) {
+        this.act = act;
+        this.evento = evento;
+    }
+
+    @Override
+    protected Void doInBackground(String... urlParam) {
+
+
+        int id = (int) evento.getID();
+
+        //try {
+        // Conecta con la URL y obtenemos el fichero con los datos
+        URL url;
+        try {
+            url = new URL(urlParam[0] + "?id=" + id);
+
+            Log.d("URL", url.toString());
+            RestTemplate restTemplate = new RestTemplate();
+            restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+            restTemplate.getForObject(url.toString(), Void.class);
+        } catch (Exception e) {
+            Log.e("VAL ANADE OPI ERROR", e.getMessage());
+        }
+
+        return null;
+    }
+
+
+}
+
+

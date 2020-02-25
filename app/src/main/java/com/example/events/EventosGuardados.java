@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class EventosGuardados extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ArrayList<Evento> eventos;
-    private EventoAdapter adaptador;
+    public static EventoAdapter adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +48,13 @@ public class EventosGuardados extends AppCompatActivity implements AdapterView.O
     protected void onResume() {
         super.onResume();
 
-        DataBase db = new DataBase(this);
+        //DataBase db = new DataBase(this);
         eventos.clear();
-        eventos.addAll(db.getGuardados());
+        //eventos.addAll(db.getGuardados());
         adaptador.notifyDataSetChanged();
+
+        DescargaDatos descargaDatos = new DescargaDatos (this,eventos, "lista guardados");
+        descargaDatos.execute(Constantes.URL+"eventosGuardados?guardado=true");
     }
 
 

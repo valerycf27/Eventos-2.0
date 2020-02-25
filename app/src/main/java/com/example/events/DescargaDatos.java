@@ -41,6 +41,8 @@ public class DescargaDatos extends AsyncTask<String, Void, Void> {
 
                 case "lista organizador":
 
+                case "lista guardados":
+
                 case "mapa":
                     Evento[] opinionesArray = restTemplate.getForObject(url, Evento[].class);
                     arrListaEventos.addAll(Arrays.asList(opinionesArray));
@@ -103,6 +105,10 @@ public class DescargaDatos extends AsyncTask<String, Void, Void> {
 
             case "main lista":
                 MainActivity.adaptador.notifyDataSetChanged();
+                break;
+
+            case "lista guardados":
+                EventosGuardados.adaptador.notifyDataSetChanged();
                 break;
 
             case "lista organizador":

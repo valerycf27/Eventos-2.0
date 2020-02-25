@@ -104,9 +104,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.itemGuardar:
                 Evento evento = eventos.get(posicion);
                 evento.guardar();
-                DataBase db = new DataBase(this);
-                db.guardarEvento(evento);
+                //DataBase db = new DataBase(this);
+                //db.guardarEvento(evento);
                 adaptador.notifyDataSetChanged();
+
+                UpdateOpinon updateOpinon = new UpdateOpinon(this, evento);
+                updateOpinon.execute(Constantes.URL+"guardarEvento");
                 return true;
 
             case R.id.itemDescartar:

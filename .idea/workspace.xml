@@ -6,11 +6,12 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d44867d0-8c06-46b6-8f05-f47aabcb39c2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/events/UpdateOpinon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -18,20 +19,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/events/Anadir_Opinion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/events/Anadir_Opinion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/events/DetallesEvento.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/events/DetallesEvento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/events/DescargaDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/events/DescargaDatos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/events/EventosGuardados.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/events/EventosGuardados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/events/Formulario_evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/events/Formulario_evento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/events/InsertaOpinion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/events/InsertaOpinion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/events/ListaOpiniones.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/events/ListaOpiniones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/events/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/events/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/events/Mapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/events/Mapa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/events/PreferenciasActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/events/PreferenciasActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/events/Relacionados.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/events/Relacionados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/events/OrganizadorFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/events/OrganizadorFragment.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +44,32 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="110" column="21" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/UpdateOpinon.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -59,8 +77,8 @@
         <option value="valueResourceFile" />
         <option value="layoutResourceFile" />
         <option value="resourceFile" />
-        <option value="Class" />
         <option value="layoutResourceFile_vertical" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -107,7 +125,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_lugar.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_organizador.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/ListaEventosAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/OrganizadorFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/LugarFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_contextual_eventos.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_lista_opiniones.xml" />
@@ -115,7 +132,6 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/action_anadir_evento.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/Constantes.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/DescargaDatos.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_comentario.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_evento.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_detalles_evento.xml" />
@@ -125,15 +141,18 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/ComentarioAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/Anadir_Opinion.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/InsertaOpinion.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/PreferenciasActivity.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/DetallesEvento.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/EventosGuardados.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/Formulario_evento.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/ListaOpiniones.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/Relacionados.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/Mapa.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/OrganizadorFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/Relacionados.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/DescargaDatos.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/EventosGuardados.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/events/UpdateOpinon.java" />
       </list>
     </option>
   </component>
@@ -345,18 +364,6 @@
             </path>
             <path>
               <item name="Events" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="Events" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="xml" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="Events" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
@@ -558,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582632602072</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Se cambia de tema at runtime">
+      <created>1582633454896</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1582633454896</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -572,9 +586,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.2495183" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14295302" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.14295302" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -583,10 +598,10 @@
       <window_info id="Resources Explorer" order="7" weight="0.32995737" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Run" order="0" weight="0.28186968" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49932885" visible="true" weight="0.29320112" />
+      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49932885" weight="0.4674221" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.6246459" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.13597734" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.04249292" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.6388102" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50067115" side_tool="true" weight="0.31303117" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.34419262" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.2592068" />
@@ -683,20 +698,10 @@
     <MESSAGE value="Ficheros actualizados" />
     <MESSAGE value="Selects funcionando correctamente,todo creado para añadir opinión" />
     <MESSAGE value="Se terminan preferencias y mapas de todos los eventos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se terminan preferencias y mapas de todos los eventos." />
+    <MESSAGE value="Se cambia de tema at runtime" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se cambia de tema at runtime" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_eventos_guardados.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/Util.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -766,16 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/PreferenciasFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="55" lean-forward="true" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -864,16 +859,6 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/OrganizadorFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/Constantes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
@@ -938,16 +923,6 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/DescargaDatos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/EventoAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -1011,13 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/EventosGuardados.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/Formulario_evento.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
@@ -1028,37 +996,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/InsertaOpinion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/ListaEventosAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/ListaOpiniones.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-806">
-          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="31" column="40" lean-forward="true" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1106,20 +1047,98 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/Relacionados.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/PreferenciasActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        <state relative-caret-position="483">
+          <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/PreferenciasActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/PreferenciasFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        <state relative-caret-position="210">
+          <caret line="10" column="55" lean-forward="true" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/Relacionados.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/OrganizadorFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/ListaOpiniones.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/InsertaOpinion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="33" column="21" selection-end-line="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_eventos_guardados.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/DescargaDatos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1834">
+          <caret line="110" column="66" selection-start-line="110" selection-start-column="66" selection-end-line="110" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/EventosGuardados.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="56" column="76" selection-start-line="56" selection-start-column="76" selection-end-line="56" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="110" column="21" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/events/UpdateOpinon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
